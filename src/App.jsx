@@ -6,7 +6,7 @@ import ScrollToTop from "./components/ScrollToTop";
 import ContactUS from "./Pages/contact-us";
 import News from "./Pages/News";
 import FAQs from "./Pages/FAQs";
-import TermsConditions from "./Pages/terms-and-conditions";
+import TermsConditions from "./Pages/Terms-and-conditions";
 
 const App = () => {
   return (

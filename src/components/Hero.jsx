@@ -13,6 +13,8 @@ import Popup from './Popup';
 
 const Hero = () => {
   const parallaxRef = useRef(null);
+
+
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const togglePopup = () => {
     setIsPopupOpen(!isPopupOpen);

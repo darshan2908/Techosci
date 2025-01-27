@@ -133,22 +133,23 @@ export const roadmap = [
   },
 ];
 
-export const collabText =
+export const subText =
   "Smart automation and secure development-our offshore IT services are your partner in creating smarter, faster, and more innovative business solutions.";
+export const collabText = "With 5 years of expertise, we bring smart automation and secure development to drive innovation and add value to your business."
 
 export const collabContent = [
   {
     id: "0",
-    title: "Seamless Integration",
-    text: collabText,
+    title: "40+ Applications Developed",
+    text: subText,
   },
   {
     id: "1",
-    title: "Smart Automation",
+    title: "200+ Websites Developed",
   },
   {
     id: "2",
-    title: "Top-notch Security",
+    title: "25+ Team Members",
   },
 ];
 
@@ -348,6 +349,10 @@ export const footerLinks = [
       {
         name: "FAQ",
         link: "/FAQs",
+      },
+      {
+        name: "About US",
+        link: "/about-us",
       },
       {
         name: "Privacy Policy",

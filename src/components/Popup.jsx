@@ -13,10 +13,10 @@ const Popup = ({ isOpen, onClose }) => {
       document.body.style.overflow = "auto";
     }
 
-    // Cleanup when component unmounts or popup closes
+    {/* // Cleanup when component unmounts or popup closes
     return () => {
       document.body.style.overflow = "auto";
-    };
+    }; */}
   }, [isOpen]);
 
   const handleSubmit = () => {

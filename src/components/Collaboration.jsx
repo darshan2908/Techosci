@@ -9,8 +9,8 @@ const Collaboration = () => {
     <Section crosses>
       <div className="container lg:flex">
         <div className="max-w-[25rem]">
-          <h2 className="h2 mb-4 md:mb-8">
-            AI Chat App for seamless collaboration
+          <h2 className="h2 mb-4 md:mb-7">
+          Software Development Company
           </h2>
 
           <ul className="max-w-[22rem] mb-10 md:mb-14">
@@ -27,11 +27,11 @@ const Collaboration = () => {
             ))}
           </ul>
 
-          <Button>Try it now</Button>
+          <Button>About US</Button>
         </div>
 
         <div className="lg:ml-auto xl:w-[38rem] mt-4">
-          <p className="body-2 mb-8 text-n-4 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">
+          <p className="body-2 mb-8 text-n-2 md:mb-16 lg:mb-32 lg:w-[22rem] lg:mx-auto">
             {collabText}
           </p>
 

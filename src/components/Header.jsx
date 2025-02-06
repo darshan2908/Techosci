@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
-import { brainwave } from "../assets";
+import { techosci } from "../assets";
 import { navigation } from "../constants";
 import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
@@ -41,7 +41,7 @@ const Header = () => {
         href="/"
         onClick={() => window.location.reload()}
         >
-          <img src={brainwave} width={190} height={40} alt="Brainwave" />
+          <img src={techosci} width={190} height={40} alt="Techosci" />
         </a>
 
         <nav

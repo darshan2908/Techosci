@@ -9,11 +9,11 @@ const Benefits = () => {
   return (
     <Section id="features">
       <div className="container relative z-2">
+      <div className="absolute z-[0] w-[60%] h-[60%] -right-[50%] rounded-full blue__gradient bottom-40" />
         <Heading
           tag="Get started with Techosci"
           title="What we're working on"//"Work Smarter, Not Harder with Techosci"
         />
-
         <div className="flex flex-wrap gap-10 mb-10">
           {benefits.map((item) => (
             <div
@@ -41,7 +41,7 @@ const Benefits = () => {
               </div>
 
               {item.light && <GradientLight />}
-
+              
               <div
                 className="absolute inset-0.5 bg-n-8"
                 style={{ clipPath: "url(#benefits)" }}

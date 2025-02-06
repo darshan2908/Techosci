@@ -2,7 +2,7 @@ import React from "react";
 import Section from "./Section";
 import { footerLinks, socials } from "../constants";
 import { Link } from "react-router-dom";
-import { brainwave } from "../assets";
+import { techosci } from "../assets";
 
 const Footer = () => {
   return (
@@ -12,8 +12,8 @@ const Footer = () => {
 
         <div className="flex-[1] flex flex-col justify-start">
           <img
-            src={brainwave}
-            alt="brainwave"
+            src={techosci}
+            alt="Techosci"
             className="w-[266px] h-[72.14px] object-contain"
           />
           <p className="text-dimWhite text-[18px] leading-[30.8px] mt-4 max-w-[312px]">
@@ -43,7 +43,7 @@ const Footer = () => {
           ))}
         </div>
       </div>
-
+      
       <div className="container flex sm:justify-between justify-center items-center gap-10 max-sm:flex-col">
         <p className="caption text-n-4 lg:block">
           © Techosci {new Date().getFullYear()}. All rights reserved.
@@ -118,3 +118,4 @@ const Footer2 = () => {
     </Section>
   );
 };
+//export default Footer2;

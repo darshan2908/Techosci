@@ -1,3 +1,4 @@
+import { data } from "autoprefixer";
 import {
   benefitIcon1,
   benefitIcon2,
@@ -447,3 +448,47 @@ export const footerLinks = [
     ],
   },
 ];
+
+export const aboutData = {
+  title: "At Techosci, we're more than a software company - we're your partners in innovation. With a passion for building custom, scalable, and secure digital solutions, we empower businesses to thrive in an ever-evolving digital world.",
+  data:[
+    {
+      title:"Our Mission",
+      desc: "To craft cutting-edge, custom solutions that empower businesses to innovate, grow, and stay ahead of the competition. We strive to make technology an enabler, not just a tool, helping our clients achieve their goals efficiently and effectively."
+    },
+    {
+      title:"Our Vision",
+      desc: "To be a global leader in digital innovation, creating secure, scalable, and transformative solutions. We aim to shape a world where technology bridges gaps and builds opportunities for businesses of all sizes."
+    },
+  ]
+}
+
+export const privacyData = {
+    title: "At Techosci, we are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner. This Privacy Policy outlines how we collect, use, and safeguard your information.",
+    data: [
+      {
+        title: "Information We Collect",
+        desc: "We may collect personal information such as your name, email address, phone number, and other relevant details when you interact with our website, services, or communications. We also collect non-personal information like browser type, IP address, and browsing behavior.",
+      },
+      {
+        title: "How We Use Your Information",
+        desc: "Your information is used to provide and improve our services, communicate with you, and personalize your experience. We may also use it for analytics, marketing, and legal compliance.",
+      },
+      {
+        title: "Data Security",
+        desc: "We implement robust security measures to protect your data from unauthorized access, alteration, or disclosure. However, no method of transmission over the internet is 100% secure, and we cannot guarantee absolute security.",
+      },
+      {
+        title: "Third-Party Services",
+        desc: "We may use third-party services to process data or deliver services. These third parties are obligated to protect your information and use it only for the purposes we specify.",
+      },
+      {
+        title: "Your Rights",
+        desc: "You have the right to access, update, or delete your personal information. You can also opt-out of marketing communications at any time. Contact us if you wish to exercise these rights.",
+      },
+      {
+        title: "Changes to This Policy",
+        desc: "We may update this Privacy Policy from time to time. Any changes will be posted on this page, and we encourage you to review it periodically.",
+      },
+    ],
+}

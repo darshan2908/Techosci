@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "./Button";
-import { EmailJSPublicKey, EmailJSTemplateID } from "../constants/config";
+import { EmailJSServiceID, EmailJSPublicKey, EmailJSTemplateID } from "../constants/config";
 
 const Popup = ({ isOpen, onClose }) => {
   const formRef = useRef(null);

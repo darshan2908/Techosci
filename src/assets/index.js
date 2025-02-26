@@ -1,5 +1,7 @@
-import brainwave from "./brainwave.svg";
 import techosci from "./techosci.svg";
+import TechosciLogo from "./TechosciLogo.svg";
+import TechosciLogoBlack from "./TechosciLogoBlack.svg";
+import brainwave from "./brainwave.svg";
 import check from "./check.svg";
 import brainwaveSymbol from "./brainwave-symbol.svg";
 import brainwaveWhiteSymbol from "./brainwave-symbol-white.svg";
@@ -78,6 +80,8 @@ import twitter from "./socials/twitter.svg";
 
 export {
   techosci,
+  TechosciLogo,
+  TechosciLogoBlack,
   brainwave,
   check,
   check2,

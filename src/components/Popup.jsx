@@ -1,27 +1,59 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import Button from "./Button";
+import { EmailJSPublicKey, EmailJSTemplateID } from "../constants/config";
 
 const Popup = ({ isOpen, onClose }) => {
-  const [inputValue, setInputValue] = useState("");
+  const formRef = useRef(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+  });
 
   useEffect(() => {
-    if (isOpen) {
-      // Disable background scrolling
-      document.body.style.overflow = "hidden";
-    } else {
-      // Enable background scrolling
-      document.body.style.overflow = "auto";
-    }
-
-    {/* // Cleanup when component unmounts or popup closes
-    return () => {
-      document.body.style.overflow = "auto";
-    }; */}
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+    return () => (document.body.style.overflow = "auto");
   }, [isOpen]);
 
-  const handleSubmit = () => {
-    alert(`Submitted value: ${inputValue}`);
-    onClose();
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  
+    emailjs
+      .sendForm(
+        EmailJSServiceID, // Replace with your EmailJS Service ID
+        EmailJSTemplateID, // Replace with your EmailJS Template ID
+        formRef.current,
+        EmailJSPublicKey // Replace with your EmailJS Public Key
+      )
+      .then(
+        (response) => {
+          alert("Email sent successfully!");
+          console.log("Success:", response);
+  
+          // ✅ Clear form state
+          setFormData({
+            name: "",
+            email: "",
+            phone: "",
+            message: "",
+          });
+  
+          // ✅ Reset the form reference
+          formRef.current.reset();
+  
+          onClose(); // Close popup
+        },
+        (error) => {
+          alert("Failed to send email.");
+          console.error("Error:", error);
+        }
+      );
   };
 
   if (!isOpen) return null;
@@ -29,7 +61,6 @@ const Popup = ({ isOpen, onClose }) => {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
       <div className="flex flex-col p-6 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl gap-6 relative w-[90%] max-w-md">
-        {/* Close Button */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl font-bold"
@@ -37,55 +68,53 @@ const Popup = ({ isOpen, onClose }) => {
           &times;
         </button>
 
-        {/* Title */}
         <h6 className="font-semibold text-base">Let's Connect</h6>
-
-        {/* Description */}
         <p className="text-sm text-gray-300">
-        Tell us about your requirement, and we'll get back to you right away!
+          Tell us about your requirement, and we'll get back to you right away!
         </p>
-        {/* Form */}
-        <form className="space-y-4">
-          <div>
+
+        <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
           <input
-          type="text"
-          placeholder="Name*"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          className="w-full p-3 text-sm text-gray-100 border border-gray-300 rounded-lg focus:outline-none"
-        />
-          </div>
-          <div>
+            type="text"
+            name="name"
+            placeholder="Name*"
+            value={formData.name}
+            onChange={handleChange}
+            className="w-full p-3 text-sm text-gray-100 border border-gray-300 rounded-lg focus:outline-none"
+            required
+          />
           <input
-          type="text"
-          placeholder="Email*"
-          className="w-full p-3 text-sm text-gray-100 border border-gray-300 rounded-lg focus:outline-none"
-        />
-          </div>
-          <div>
+            type="email"
+            name="email"
+            placeholder="Email*"
+            value={formData.email}
+            onChange={handleChange}
+            className="w-full p-3 text-sm text-gray-100 border border-gray-300 rounded-lg focus:outline-none"
+            required
+          />
           <input
-          type="text"
-          placeholder="Phone*"
-          className="w-full p-3 text-sm text-gray-100 border border-gray-300 rounded-lg focus:outline-none"
-        />
-          </div>
-          <div>
-            <textarea
-              rows="4"
-              placeholder="Please describe your requirement"
-              className="w-full p-3 text-sm text-gray-100 border border-gray-300 rounded-lg focus:outline-none"
-            />
-          </div>
-          <div className="flex justify-right mt-12 md:mt-15 xl:mt-20">
-        </div>
+            type="tel"
+            name="phone"
+            placeholder="Phone*"
+            value={formData.phone}
+            onChange={handleChange}
+            className="w-full p-3 text-sm text-gray-100 border border-gray-300 rounded-lg focus:outline-none"
+            required
+          />
+          <textarea
+            name="message"
+            rows="4"
+            placeholder="Please describe your requirement"
+            value={formData.message}
+            onChange={handleChange}
+            className="w-full p-3 text-sm text-gray-100 border border-gray-300 rounded-lg focus:outline-none"
+            required
+          />
+
+          <Button type="submit" className="self-end">
+            Submit
+          </Button>
         </form>
-        {/* Submit Button */}
-        <Button
-          className="self-end"
-          onClick={handleSubmit}
-        >
-          Submit
-        </Button>
       </div>
     </div>
   );

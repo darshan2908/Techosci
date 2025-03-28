@@ -17,7 +17,7 @@ const Footer = () => {
             className="w-[266px] h-[72.14px] object-contain"
           />
           <p className="text-dimWhite text-[18px] leading-[30.8px] mt-4 max-w-[312px]">
-          A leading Offshore Development Company. With a solid team of expert IT professionals.
+          A leading Software Development Company. With a solid team of expert IT professionals.
           </p>
         </div>
         <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10">
